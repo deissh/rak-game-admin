@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
       resources :users
-      resources :quest
+      resources :quests
 
       root to: "users#index"
     end
