@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: rak-game-admin_production
-  username: rak-game-admin
-  password: <%= ENV['RAK-GAME-ADMIN_DATABASE_PASSWORD'] %>
+  username: <%= ENV.fetch("DATABASE_USER") { 'root' } %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") { 'toor' } %>
