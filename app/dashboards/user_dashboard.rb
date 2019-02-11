@@ -28,6 +28,8 @@ class UserDashboard < Administrate::BaseDashboard
     :first_name,
     :second_name,
     :nickname,
+    :points,
+    :quest_count,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
