@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    
+  get '/user/login', to: 'user#login'
+  get '/quests', to: 'quest#getall'
 end
