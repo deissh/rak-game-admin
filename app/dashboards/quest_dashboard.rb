@@ -55,6 +55,6 @@ class QuestDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(quest)
-    "#{quest.name}"
+    "#{quest.body}"
   end
 end
