@@ -54,7 +54,7 @@ class QuestDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how quests are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(quest)
-  #   "Quest ##{quest.id}"
-  # end
+  def display_resource(quest)
+    "#{quest.name}"
+  end
 end

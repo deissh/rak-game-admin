@@ -48,7 +48,7 @@ class NpcDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how npcs are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(npc)
-  #   "Npc ##{npc.id}"
-  # end
+  def display_resource(npc)
+    "#{npc.name}"
+  end
 end

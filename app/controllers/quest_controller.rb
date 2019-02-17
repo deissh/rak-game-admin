@@ -1,26 +1,29 @@
 class QuestController < ApplicationController
     def getall
-        all = []
+        all = {}
         Npc.all.each do |npc|
             res = []
             Quest.where(npc_id: npc.id).each do |quest|
                 @a = {
-                    id: quest.id,
                     name: quest.name,
                     body: quest.body,
                     answers: []
                 }
-                @a['answers'] = Answer.where(quest_id: quest.id)
+
+                answers = []
+                Answer.where(quest_id: quest.id).each do |answer|
+                    answers.push(answer.body)
+                end
+                @a['answers'] = answers
                 res.push(@a)
             end
 
-            all.push({
-                id: npc.id,
+            all[npc.id] = ({
                 name: npc.name,
                 questes: res
             })
         end
 
-        render :json => { count: all.count, rows: all }
+        render :json => all
     end
 end

@@ -47,7 +47,7 @@ class AnswerDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how answers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(answer)
-  #   "Answer ##{answer.id}"
-  # end
+  def display_resource(answer)
+    "#{answer.body}"
+  end
 end
